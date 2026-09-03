@@ -1,5 +1,9 @@
 package com.example.demo.repository;
 
-public class ReviewRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.Review;
+
+public interface  ReviewRepository extends JpaRepository<Review, Long> {
     
 }

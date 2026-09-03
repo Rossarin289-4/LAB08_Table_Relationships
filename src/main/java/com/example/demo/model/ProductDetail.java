@@ -16,22 +16,22 @@ public class ProductDetail {
     private String description;
     private String warranty;
     private Double weight;
-    private String dismension;
-    private String manufacturerdCountry;
+    private String dimensions;
+    private String manufacturedCountry;
 
     @OneToOne(mappedBy = "detail")
     private Product product;
 
     public ProductDetail() {}
     public ProductDetail(Long id, String description, String warranty,
-                            Double weight, String dismension,
-                            String manufacturerdCountry, Product product) {
+                            Double weight, String dimensions,
+                            String manufacturedCountry, Product product) {
         this.id = id;
         this.description = description;
         this.warranty = warranty;
         this.weight = weight;
-        this.dismension = dismension;
-        this.manufacturerdCountry = manufacturerdCountry;
+        this.dimensions = dimensions;
+        this.manufacturedCountry = manufacturedCountry;
         this.product = product;
     }
 
@@ -63,17 +63,24 @@ public class ProductDetail {
         this.weight = weight;
     }
 
-    public String getDismension() {
-        return dismension;
+    public String getDimensions() {
+        return dimensions;
     }
-    public void setDismension(String dismension) {
-        this.dismension = dismension;
+    public void setDimensions(String dimensions) {
+        this.dimensions = dimensions;
     }
 
-    public String getManufacturerdCountry() {
-        return manufacturerdCountry;
+    public String getManufacturedCountry() {
+        return manufacturedCountry;
     }
-    public void setManufacturerdCountry(String manufacturerdCountry) {
-        this.manufacturerdCountry = manufacturerdCountry;
+    public void setManufacturedCountry(String manufacturedCountry) {
+        this.manufacturedCountry = manufacturedCountry;
+    }
+
+    public Product getProduct(){
+        return product;
+    }
+    public void setProduct(Product product){
+        this.product = product;
     }
 }

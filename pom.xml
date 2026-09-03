@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+        https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -14,7 +14,7 @@
 
   <!-- ⚠️ แก้ artifactId เป็น lab8-{รหัสนักศึกษา}-sec{section} -->
   <groupId>com.example</groupId>
-  <artifactId>lab8-67XXXXXXXX-X-sec1</artifactId>
+  <artifactId>lab8-673380289-4-sec1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>lab8-product-shop</name>
   <description>Lab 8 — Product Shop 1:1 Relationship | CP353002</description>
