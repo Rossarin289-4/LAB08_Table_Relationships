@@ -1,0 +1,14 @@
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/DemoApplication.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/controller/ProductController.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/model/Product.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/model/ProductDetail.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/model/Review.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/repository/ProductDetailRepository.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/repository/ProductRepository.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/repository/ReviewRepository.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/service/ProductService.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/strategy/DiscountContext.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/strategy/DiscountStrategy.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/strategy/MemberDiscountStrategy.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/strategy/NoDiscountStrategy.java
+/Users/fangfang/Documents/งานปี3/Principle_labs/LAB08_Table_Relationships/src/main/java/com/example/demo/strategy/SeasonalSaleStrategy.java

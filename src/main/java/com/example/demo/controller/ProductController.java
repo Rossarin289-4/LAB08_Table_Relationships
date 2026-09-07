@@ -1,4 +1,7 @@
 package com.example.demo.controller;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.model.Product;
 import com.example.demo.service.ProductService;
 
-
 @Controller
 @RequestMapping("/products")
 public class ProductController {
+
     private final ProductService productService;
 
     public ProductController(ProductService productService) {
@@ -23,8 +26,22 @@ public class ProductController {
 
     //แสดงรายการสินค้าทั้งหมด
     @GetMapping
-    public String listProducts(Model model){
-        model.addAttribute("products", productService.getAllProducts());
+    public String listProducts(Model model) {
+
+        List<Product> products = productService.getAllProducts();
+
+        Map<Long, Double> discountedPrices = new HashMap<>();
+
+        for (Product product : products) {
+            discountedPrices.put(
+                    product.getId(),
+                    productService.calculateFinalPrice(product)
+            );
+        }
+
+        model.addAttribute("products", products);
+        model.addAttribute("discountedPrices", discountedPrices);
+
         return "products/list";
     }
 
@@ -38,46 +55,60 @@ public class ProductController {
     //รับข้อมูลจากฟอร์มเพิ่มสินค้าใหม่
     @PostMapping("/save")
     public String saveProduct(@ModelAttribute("product") Product product) {
-        if(product.getDetail() != null){
+
+        if (product.getDetail() != null) {
             product.getDetail().setProduct(product);
         }
+
         productService.saveProduct(product);
         return "redirect:/products";
     }
 
     //แก้ไขสินค้า
     @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable Long id, Model model) {
+    public String showEditForm(
+            @PathVariable Long id,
+            Model model) {
+
         Product product = productService.getProductById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
+
         model.addAttribute("product", product);
+
         return "products/edit";
     }
 
     //รับข้อมูลจากฟอร์มแก้ไขสินค้า
     @PostMapping("/update/{id}")
     public String updateProduct(
-        @PathVariable Long id,
-        @ModelAttribute Product product){
-            productService.updateProduct(id, product);
-            return "redirect:/products";
-        }
+            @PathVariable Long id,
+            @ModelAttribute Product product) {
+
+        productService.updateProduct(id, product);
+
+        return "redirect:/products";
+    }
 
     //ยืนยันการลบสินค้า
     @GetMapping("/delete/{id}")
     public String showDeleteForm(
-        @PathVariable Long id,
-        Model model) {
+            @PathVariable Long id,
+            Model model) {
+
         Product product = productService.getProductById(id)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
+
         model.addAttribute("product", product);
+
         return "products/delete";
     }
 
     //ลบสินค้า
     @PostMapping("/delete/{id}")
     public String deleteProduct(@PathVariable Long id) {
+
         productService.deleteProduct(id);
+
         return "redirect:/products";
     }
 }

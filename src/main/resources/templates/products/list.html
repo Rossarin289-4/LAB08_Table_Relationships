@@ -40,7 +40,7 @@
             <td th:text="${product.stock}"></td>
             <td th:text="${#numbers.formatDecimal(product.price, 1, 2)}"></td>
             <td th:text="${product.discountType}"></td>
-            <td th:text="${#numbers.formatDecimal(product.discountedPrice, 1, 2)}"></td>
+            <td th:text="${#numbers.formatDecimal(discountedPrices[product.id], 1, 2)}"></td>
             <td th:text="${product.detail != null ? product.detail.warranty : '-'}"></td>
             <td th:text="${product.detail != null ? product.detail.weight : '-'}"></td>
             <td th:text="${product.reviews != null ? product.reviews.size() + ' รีวิว' : '0 รีวิว'}"></td>

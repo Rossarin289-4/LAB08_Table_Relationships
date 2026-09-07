@@ -1,5 +1,8 @@
 package com.example.demo.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Product;
@@ -9,7 +12,6 @@ import com.example.demo.strategy.DiscountContext;
 import com.example.demo.strategy.MemberDiscountStrategy;
 import com.example.demo.strategy.NoDiscountStrategy;
 import com.example.demo.strategy.SeasonalSaleStrategy;
-import java.util.List;
 
 @Service
 public class ProductService {
@@ -26,7 +28,7 @@ public class ProductService {
     }
 
     //ค้นหาสินค้าตาม id
-    public Product getProductByID(Long id){
+    public Optional<Product> getProductById(Long id){
         return productRepository.findById(id);
     }
 
@@ -59,7 +61,7 @@ public class ProductService {
                 detail.setDescription(product.getDetail().getDescription());
                 detail.setWarranty(product.getDetail().getWarranty());
                 detail.setWeight(product.getDetail().getWeight());
-                detail.setDismensions(product.getDetail().getDismensions());
+                detail.setDimensions(product.getDetail().getDimensions());
                 detail.setManufacturedCountry(product.getDetail().getManufacturedCountry());
             }
         }
