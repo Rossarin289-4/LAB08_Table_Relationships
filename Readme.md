@@ -1,3 +1,7 @@
+# 📂 Test Case & Report
+ผลลัพธ์การรันโปรแกรม (PNG) และไฟล์รายงาน (PDF) อยู่ในโฟลเดอร์ test-case/
+
+---
 # 🛍️ Lab 8: Table Relationships — Product Shop
 
 **วิชา:** CP353002 Principles of Software Design  
